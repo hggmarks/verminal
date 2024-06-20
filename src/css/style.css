@@ -1,12 +1,30 @@
-textarea {
-    border: none;
-    overflow: auto;
-    outline: none;
-    width: 100%;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    resize: none;
-    overflow: hidden;
-    background-color: red;
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1d2d;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(70, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+}
+
+.cell {
+    width: 14px;  /* Adjust the width of each cell */
+    height: 27px; /* Adjust the height of each cell */
+    background-color: #3c3a65;
+    border: 1px solid #5a587d; /* Optional: Add border to each cell */
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { background-color: #3c3a65; }
+  50% { background-color: #5a587d;}
 }
