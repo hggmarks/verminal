@@ -9,22 +9,28 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(70, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(80, 1fr);
+  grid-template-rows: repeat(25, 1fr);
 }
 
 .cell {
-    width: 14px;  /* Adjust the width of each cell */
-    height: 27px; /* Adjust the height of each cell */
-    background-color: #3c3a65;
-    border: 1px solid #5a587d; /* Optional: Add border to each cell */
+  width: 14px;  /* Adjust the width of each cell */
+  height: 27px; /* Adjust the height of each cell */
+  background-color: #3c3a65;
+  border: 0px solid #5a587d; /* Optional: Add border to each cell */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  color: #ececec;
+  font-size: 17px;
 }
 
 .blinking {
-  animation: blink 1s infinite;
+  animation: blink 1.2s infinite;
 }
 
 @keyframes blink {
   0%, 100% { background-color: #3c3a65; }
-  50% { background-color: #5a587d;}
+  50% { background-color: #7a707d;}
 }

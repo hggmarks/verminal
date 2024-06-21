@@ -21,14 +21,30 @@ export class TerminalBuffer {
   }
 
   highlightCell() {
-    const index = this.cursor.position.x + (this.cursor.position.y * this.size.y);
-    this.container.children[index].classList.add('blinking');
+    const index = this.cursor.getCursorIdx();
+    if (index >= 0 && index <= this.size.x * this.size.y) {
+      this.container.children[index].classList.add('blinking');
+    }
   }
 
   unhighlightCell() {
-    const index = this.cursor.position.x + (this.cursor.position.y * this.size.y);
-    this.container.children[index].classList.remove('blinking');
+    const index = this.cursor.getCursorIdx();
+    if (index >= 0 && index <= this.size.x * this.size.y) {
+      this.container.children[index].classList.remove('blinking');
+    }
   }
 
+  setCurrentCellCharacter(char) {
+    const index = this.cursor.getCursorIdx();
+    if (index >= 0 && index <= this.size.x * this.size.y) {
+      this.container.children[index].textContent = char;
+    }
+  }
 
+  clearPreviousCell() {
+    const index = this.cursor.getCursorIdx() - 1;
+    if (index >=0 && index <= this.size.x * this.size.y) {
+      this.container.children[index].textContent = "";
+    }
+  }
 }
