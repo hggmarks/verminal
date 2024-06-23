@@ -26,6 +26,10 @@ const acceptedMoves = {
     } else {
       terminal.cursor.moveCol(-1);
     }
+  },
+  Enter() {
+    terminal.cursor.carriageReturn();
+    terminal.cursor.lineFeed();
   }
 }
 
@@ -35,7 +39,7 @@ document.addEventListener('keydown', (event) => {
     acceptedMoves[event.key]();
     terminal.highlightCell();
   } else if (event.key.length === 1) {
-    terminal.setCurrentCellCharacter(event.key);
+    terminal.setCurrentCellCharacter(event.key, null);
     terminal.unhighlightCell();
     if (terminal.cursor.position.x == 79) {
       terminal.cursor.carriageReturn();

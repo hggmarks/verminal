@@ -14,8 +14,8 @@ body {
 }
 
 .cell {
-  width: 14px;  /* Adjust the width of each cell */
-  height: 27px; /* Adjust the height of each cell */
+  width: 12px;  /* Adjust the width of each cell */
+  height: 23px; /* Adjust the height of each cell */
   background-color: #3c3a65;
   border: 0px solid #5a587d; /* Optional: Add border to each cell */
   display: flex;
